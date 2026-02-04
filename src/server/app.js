@@ -36,26 +36,25 @@ export function createApp(context) {
     });
   });
 
-  // Register routes
-  import('./routes/health.js').then(({ healthRoute }) => {
-    fastify.register(healthRoute, { prefix: '/v1', ...context });
-  });
-
-  import('./routes/completions.js').then(({ completionsRoute }) => {
-    fastify.register(completionsRoute, { prefix: '/v1', ...context });
-  });
-
-  import('./routes/budget.js').then(({ budgetRoute }) => {
-    fastify.register(budgetRoute, { prefix: '/v1', ...context });
-  });
-
-  import('./routes/models.js').then(({ modelsRoute }) => {
-    fastify.register(modelsRoute, { prefix: '/v1', ...context });
-  });
-
-  import('./routes/accounts.js').then(({ accountsRoute }) => {
-    fastify.register(accountsRoute, { prefix: '/v1', ...context });
-  });
-
+  // Register routes (must be done before server starts)
   return fastify;
+}
+
+/**
+ * Register all routes
+ * @param {FastifyInstance} app - Fastify instance
+ * @param {object} context - Application context
+ */
+export async function registerRoutes(app, context) {
+  const { healthRoute } = await import('./routes/health.js');
+  const { completionsRoute } = await import('./routes/completions.js');
+  const { budgetRoute } = await import('./routes/budget.js');
+  const { modelsRoute } = await import('./routes/models.js');
+  const { accountsRoute } = await import('./routes/accounts.js');
+
+  await app.register(healthRoute, { prefix: '/v1', ...context });
+  await app.register(completionsRoute, { prefix: '/v1', ...context });
+  await app.register(budgetRoute, { prefix: '/v1', ...context });
+  await app.register(modelsRoute, { prefix: '/v1', ...context });
+  await app.register(accountsRoute, { prefix: '/v1', ...context });
 }
