@@ -28,8 +28,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/anthropic/xswarm-llm-freeloader.git"
+    "url": "git+https://github.com/chadananda/xswarm-llm-freeloader.git"
   },
+  "bugs": {
+    "url": "https://github.com/chadananda/xswarm-llm-freeloader/issues"
+  },
+  "homepage": "https://github.com/chadananda/xswarm-llm-freeloader#readme",
   "dependencies": {
     "fastify": "^5.2.0",
     "@fastify/cors": "^10.0.1",

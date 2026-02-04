@@ -1,0 +1,29 @@
+# Test files
+tests/
+*.test.js
+*.spec.js
+coverage/
+
+# Documentation (not needed in package)
+IMPLEMENTATION_SUMMARY.md
+PRD.md
+
+# Development files
+.git/
+.gitignore
+.vscode/
+.idea/
+*.log
+
+# Build artifacts
+dist/
+
+# Temporary files
+tmp/
+
+# Claude context
+.claude/
+
+# OS files
+.DS_Store
+Thumbs.db
