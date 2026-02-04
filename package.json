@@ -5,7 +5,7 @@
   "type": "module",
   "main": "src/server/index.js",
   "bin": {
-    "xswarm": "./src/bin/xswarm.js"
+    "xswarm": "src/bin/xswarm.js"
   },
   "scripts": {
     "start": "node src/server/index.js",
