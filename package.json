@@ -1,0 +1,54 @@
+{
+  "name": "xswarm-freeloader",
+  "version": "1.0.0",
+  "description": "Intelligent AI router that maximizes free tier usage across 100+ LLM providers",
+  "type": "module",
+  "main": "src/server/index.js",
+  "bin": {
+    "xswarm": "./src/bin/xswarm.js"
+  },
+  "scripts": {
+    "start": "node src/server/index.js",
+    "dev": "node --watch src/server/index.js",
+    "test": "vitest",
+    "test:ui": "vitest --ui",
+    "test:coverage": "vitest --coverage",
+    "postinstall": "node scripts/postinstall.js"
+  },
+  "keywords": [
+    "ai",
+    "llm",
+    "router",
+    "free-tier",
+    "anthropic",
+    "openai",
+    "cost-optimization"
+  ],
+  "author": "",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anthropic/xswarm-llm-freeloader.git"
+  },
+  "dependencies": {
+    "fastify": "^5.2.0",
+    "@fastify/cors": "^10.0.1",
+    "@fastify/static": "^8.0.2",
+    "better-sqlite3": "^11.9.1",
+    "@blackglory/better-sqlite3-migrations": "^0.2.5",
+    "commander": "^12.1.0",
+    "zod": "^3.24.1",
+    "pino": "^9.6.0",
+    "undici": "^7.2.0"
+  },
+  "devDependencies": {
+    "vitest": "^2.1.8",
+    "@vitest/ui": "^2.1.8",
+    "@vitest/coverage-v8": "^2.1.8",
+    "eslint": "^9.18.0"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  }
+}
